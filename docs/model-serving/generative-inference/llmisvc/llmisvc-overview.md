@@ -17,7 +17,7 @@ The default llm-d integration combines the vLLM inference engine with Kubernetes
 - **vLLM** is the default when `spec.runtime` is omitted. The default llm-d templates support single-node, distributed, and disaggregated workload patterns.
 - **SGLang** is selected with `spec.runtime: kserve-llm-sglang`. The built-in SGLang template currently supports single-node, non-disaggregated deployments with managed routing and scheduling.
 
-See the [SGLang runtime guide](./sglang-runtime.md) for an end-to-end deployment example.
+See the [runtime guide](./llmisvc-runtime.md) for selection details, examples, and the current SGLang compatibility matrix.
 
 ### Why a Separate CRD?
 
@@ -183,7 +183,7 @@ This overview provides a high-level introduction to LLMInferenceService. For det
 
 ### 📚 Core Concepts
 - **[Configuration Guide](./llmisvc-configuration.md)**: Detailed spec reference and configuration patterns
-- **[SGLang Runtime](./sglang-runtime.md)**: Deploy a single-node LLMInferenceService with SGLang
+- **[Runtime](./llmisvc-runtime.md)**: Select vLLM or experimental single-node SGLang for LLMInferenceService
 - **[Architecture Guide](../../../concepts/architecture/control-plane-llmisvc.md)**: System architecture and component interactions
 - **[Dependencies](./llmisvc-dependencies.md)**: Required infrastructure components
 

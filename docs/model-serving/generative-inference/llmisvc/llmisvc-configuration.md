@@ -16,14 +16,14 @@ This guide provides detailed reference for configuring LLMInferenceService resou
 
 Use `spec.runtime` to select a namespace-scoped `ServingRuntime` or cluster-scoped `ClusterServingRuntime`. The controller checks the `LLMInferenceService` namespace first and then falls back to a `ClusterServingRuntime` with the same name.
 
-When `spec.runtime` is omitted, KServe uses the default vLLM configuration. To use the built-in SGLang runtime for a single-node deployment, set:
+When `spec.runtime` is omitted, KServe uses the default llm-d/vLLM configuration. To use the experimental built-in SGLang runtime for a plain single-node deployment, set:
 
 ```yaml
 spec:
   runtime: kserve-llm-sglang
 ```
 
-The runtime supplies the model-server container configuration as the lowest-priority composition layer, so `LLMInferenceServiceConfig` resources and fields in the service spec can still override it. See the [SGLang runtime guide](./sglang-runtime.md) for a complete example.
+The runtime supplies the model-server container configuration as the lowest-priority composition layer, so `LLMInferenceServiceConfig` resources and fields in the service spec can still override it. See the [runtime guide](./llmisvc-runtime.md) for runtime selection details and the SGLang compatibility matrix.
 
 ---
 

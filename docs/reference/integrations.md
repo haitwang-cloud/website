@@ -227,11 +227,11 @@ spec:
 
 For detailed vLLM integration, see the [Generative Inference Overview](../model-serving/generative-inference/overview.md).
 
-### SGLang Runtime
+### LLMInferenceService Runtime Selection
 
-SGLang is a high-performance LLM inference engine available to `LLMInferenceService` through KServe's built-in `kserve-llm-sglang` `ClusterServingRuntime`. It supports single-node model serving while retaining KServe-managed workloads, Gateway API routing, and intelligent scheduling.
+`LLMInferenceService` uses the default llm-d/vLLM runtime when `spec.runtime` is omitted. SGLang is available experimentally through KServe's built-in `kserve-llm-sglang` `ClusterServingRuntime` for plain single-node model serving.
 
-Select it explicitly in the service:
+Select SGLang explicitly in the service:
 
 ```yaml
 apiVersion: serving.kserve.io/v1alpha2
@@ -245,7 +245,7 @@ spec:
     name: facebook/opt-125m
 ```
 
-For prerequisites, deployment steps, inference requests, and troubleshooting, see the [SGLang Runtime Guide](../model-serving/generative-inference/llmisvc/sglang-runtime.md).
+For runtime selection examples and the current SGLang compatibility matrix, see the [LLMInferenceService Runtime Guide](../model-serving/generative-inference/llmisvc/llmisvc-runtime.md).
 
 ### gRPC Protocol Support
 

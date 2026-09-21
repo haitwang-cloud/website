@@ -7,9 +7,9 @@ title: Runtime Overview
 KServe provides two paths for serving generative AI models:
 
 - **`InferenceService`** uses compatible `ServingRuntime` or `ClusterServingRuntime` resources, selected explicitly or automatically.
-- **`LLMInferenceService`** uses the default llm-d/vLLM configuration, or the built-in SGLang runtime for single-node deployments.
+- **`LLMInferenceService`** uses the default llm-d/vLLM configuration, or the built-in experimental SGLang runtime for single-node deployments.
 
-For advanced LLM serving, see the [LLMInferenceService overview](./llmisvc/llmisvc-overview.md). To deploy with SGLang, follow the [SGLang runtime guide](./llmisvc/sglang-runtime.md).
+For advanced LLM serving, see the [LLMInferenceService overview](./llmisvc/llmisvc-overview.md). To select vLLM or experimental SGLang, see the [LLMInferenceService runtime guide](./llmisvc/llmisvc-runtime.md).
 
 The rest of this page describes the Hugging Face runtime used with `InferenceService`.
 
@@ -93,7 +93,7 @@ flowchart LR
     LLMRuntime -->|kserve-llm-sglang| SGLang["SGLang<br/>Single-node only"]
 ```
 
-See [ServingRuntime](../../concepts/resources/servingruntime.md) for `InferenceService` runtime selection, or the [LLMInferenceService overview](./llmisvc/llmisvc-overview.md) for its deployment patterns. To use SGLang, follow the [SGLang runtime guide](./llmisvc/sglang-runtime.md).
+See [ServingRuntime](../../concepts/resources/servingruntime.md) for `InferenceService` runtime selection, or the [LLMInferenceService runtime guide](./llmisvc/llmisvc-runtime.md) for vLLM and experimental SGLang selection.
 
 ## Deployment Images
 

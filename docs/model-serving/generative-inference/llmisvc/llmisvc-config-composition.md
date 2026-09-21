@@ -345,7 +345,7 @@ The controller ships with pre-installed `LLMInferenceServiceConfig` resources in
 | Config Name | Injected When | What It Sets Up |
 |-------------|--------------|-----------------|
 | `kserve-config-llm-template` | Single-node (no prefill, no worker), runtime omitted or not SGLang | Default vLLM container, probes, volumes, TLS, security context |
-| `kserve-config-sglang-template` | Single-node with `runtime: kserve-llm-sglang` | SGLang infrastructure, probes, volumes, TLS, security context |
+| `kserve-config-sglang-template` | Single-node with `runtime: kserve-llm-sglang` | Experimental SGLang container, probes, volumes, and security context |
 | `kserve-config-llm-worker-data-parallel` | Multi-node + DataParallel | Leader and worker templates, DP addressing, shared memory |
 | `kserve-config-llm-prefill-template` | Disaggregated prefill (single-node) | Prefill container |
 | `kserve-config-llm-decode-template` | Disaggregated decode (single-node) | Decode container, routing sidecar |
